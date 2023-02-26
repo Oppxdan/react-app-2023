@@ -1,25 +1,44 @@
+import {Component} from 'react';
+
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
+class App extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      workers : [
+        {
+          name: "Evan Til",
+          id: '25iefa'
+        },
+        {
+          name: "Sandra Wilkins",
+          id: '2325ie'
+        },
+        {
+          name: "Alex Hamilton",
+          id: '3452dfgs'
+        }
+      ]
+    }
+  }
+
+  render() {
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        this.state.workers.map((worker) => {
+          return <h2 key={worker.id}>{worker.name}</h2>
+        })
+      }
     </div>
   );
+
+  }
 }
 
 export default App;
