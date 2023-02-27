@@ -10,20 +10,18 @@ class App extends Component {
 
     this.state = {
       workers : [
-        {
-          name: "Evan Til",
-          id: '25iefa'
-        },
-        {
-          name: "Sandra Wilkins",
-          id: '2325ie'
-        },
-        {
-          name: "Alex Hamilton",
-          id: '3452dfgs'
-        }
+        
       ]
     }
+  }
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json()).then((users) => this.setState(() => {
+        return {workers: users}
+      },
+      () => {}
+      ))
   }
 
   render() {
