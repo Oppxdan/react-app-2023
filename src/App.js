@@ -28,6 +28,15 @@ class App extends Component {
 
     return (
     <div className="App">
+      <input  className="search-box" type="search" placeholder="Search Employees" onChange={(event) => {
+        const filteredWorkers = this.state.workers.filter((worker) => {
+          return worker.name.toLocaleLowerCase().includes(event.target.value);
+        });
+
+        this.setState(() => {
+          return { workers: filteredWorkers };
+        })
+      }}/>
       {
         this.state.workers.map((worker) => {
           return <h2 key={worker.id}>{worker.name}</h2>
