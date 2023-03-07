@@ -50,7 +50,7 @@ class App extends Component {
           return <h2 key={worker.id}>{worker.name}</h2>
         })
       }
-      <CardList />
+      <CardList workers={filteredWorkers}/>
     </div>
   );
 

@@ -2,8 +2,14 @@ import { Component } from 'react';
 
 class CardList extends Component {
     render() {
+        const { workers } = this.props;
+
         return (
-            <div>Hello, I'm Aaron</div>
+            <div>
+                {workers.map((worker) => {
+                    <h1 key={worker.id}>{worker.name}</h1>
+                })}
+            </div>
         )
     }
 }
