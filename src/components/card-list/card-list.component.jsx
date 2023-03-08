@@ -5,9 +5,11 @@ class CardList extends Component {
         const { workers } = this.props;
 
         return (
-            <div>
+            <div className="card-list">
                 {workers.map((worker) => {
-                    <h1 key={worker.id}>{worker.name}</h1>
+                    <div className="card-container">
+
+                    </div>
                 })}
             </div>
         )
