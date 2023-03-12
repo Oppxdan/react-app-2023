@@ -4,4 +4,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
+    animation: 2s ease-out 0s 1 slideInFromLeft;
+    margin-bottom: 100px;
 }

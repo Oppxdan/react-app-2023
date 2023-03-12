@@ -1,3 +1,13 @@
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,8 +16,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to left,
-      rgb(30, 47, 94) 0%,
-      rgb(255, 255, 255) 100%);
+  background-color: #171716;
   text-align: center;
+  animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.app-title {
+  margin-top: 80px;
+  margin-bottom: 60px;
+  font-size: 76px;
+  color: white;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  animation: 2s ease-out 0s 1 slideInFromLeft;
 }
