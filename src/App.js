@@ -47,11 +47,7 @@ class App extends Component {
     return (
     <div className="App">
       <SearchBox onChangeHandler={onSearchChange} placeholder="Search Workers" className="search-box"/>
-      {
-        filteredWorkers.map((worker) => {
-          return <h2 key={worker.id}>{worker.name}</h2>
-        })
-      }
+      
       <CardList workers={filteredWorkers}/>
     </div>
   );
